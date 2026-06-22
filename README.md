@@ -91,7 +91,7 @@ brew install gh && gh auth login    # 首次
 bash scripts/push_to_github.sh
 ```
 
-- GitHub: `https://github.com/kryskatrina/cv-hw3`（推送后生效）
+- GitHub: `https://github.com/krys910/cv-final-task1`
 - 网盘: `https://drive.google.com/drive/folders/1-WuiJqW-zgrD1lmQ0A5e7zcUjujvDSbf`
 
 清单：[`docs/SUBMISSION_CHECKLIST.md`](docs/SUBMISSION_CHECKLIST.md) · 实验记录：[`docs/EXPERIMENT_SUMMARY.md`](docs/EXPERIMENT_SUMMARY.md)
