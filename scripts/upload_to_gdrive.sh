@@ -18,8 +18,13 @@ if ! rclone listremotes | grep -q "^${REMOTE_NAME}:"; then
   rclone config create "$REMOTE_NAME" drive scope drive config_is_local true
 fi
 
-echo "=== 请确保已开 VPN，将弹出浏览器完成 Google 授权（仅首次）==="
-printf 'y\n' | rclone config reconnect "${REMOTE_NAME}:" || true
+echo "=== 请确保已开 VPN ==="
+if ! rclone lsd "${REMOTE_NAME}:" >/dev/null 2>&1; then
+  echo "需要重新授权 Google Drive，请在终端运行："
+  echo "  rclone config reconnect ${REMOTE_NAME}:"
+  echo "完成后再次执行本脚本。"
+  exit 1
+fi
 
 echo "=== 上传到 Drive 文件夹 $DRIVE_FOLDER_ID ==="
 rclone copy "$SRC" "${REMOTE_NAME}:hw3_outputs" \
