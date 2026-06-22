@@ -1,0 +1,43 @@
+# 旧版融合渲染参数（服务器首版：灰度 2DGS + 稀疏点投影 + 黑底）
+# 与 configs/scene_layout.yaml 位姿一致，仅融合颜色与渲染不同
+
+fusion:
+  legacy_gray: true
+
+background:
+  scene: counter
+  path: outputs/background/point_cloud.ply
+
+objects:
+  object_a:
+    path: outputs/object_a/point_cloud.ply
+    format: 2dgs
+    translation: [0.5, 0.0, -1.2]
+    scale: 0.8
+    rotation_euler: [0.0, 0.3, 0.0]
+
+  object_b:
+    path: outputs/object_b/mesh.obj
+    format: mesh
+    translation: [-0.8, 0.1, -0.5]
+    scale: 0.5
+    rotation_euler: [0.0, 1.57, 0.0]
+
+  object_c:
+    path: outputs/object_c/mesh.obj
+    format: mesh
+    translation: [0.0, 0.05, 0.3]
+    scale: 0.6
+    rotation_euler: [0.1, 0.0, 0.0]
+
+render:
+  output_dir: outputs/fused_legacy_20260617
+  num_frames: 120
+  radius: 3.0
+  height: 0.5
+  fov: 60
+  fps: 30
+  resolution: [1280, 720]
+  max_points: 120000
+  point_radius: 0
+  bg_color: [0, 0, 0]

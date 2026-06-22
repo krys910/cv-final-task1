@@ -1,0 +1,38 @@
+# 数据与输出（大文件勿提交 Git）
+data/
+outputs/
+external/
+drive_upload/
+dist/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.mp4
+*.ply
+*.obj
+*.ckpt
+*.pth
+*.tar.gz
+*.zip
+
+# COLMAP
+**/database.db
+**/colmap/
+
+# 日志
+wandb/
+logs/
+*.log
+.wandb_api_key
+
+# 作业 PDF 原件（保留 report/ 内编译产物）
+/HW3_计算机视觉.pdf
+
+# LaTeX 中间文件
+report/latex/*.aux
+report/latex/*.out
+report/latex/*.log
+report/latex/*.fls
+report/latex/*.fdb_latexmk
+report/latex/*.synctex.gz

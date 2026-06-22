@@ -1,0 +1,27 @@
+name: hw3-2dgs
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - scipy
+  - pyyaml
+  - opencv
+  - pillow
+  - tqdm
+  - matplotlib
+  - ffmpeg
+  # PyTorch 走 conda（比 pip 下 wheel 快很多）
+  - pytorch
+  - torchvision
+  - pytorch-cuda=12.1
+  - pip:
+    - trimesh
+    - open3d
+    - plyfile
+    - wandb
+    - rembg[gpu]

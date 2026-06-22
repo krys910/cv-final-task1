@@ -1,0 +1,43 @@
+# 融合场景中各物体的 Sim(3) 变换（相对于背景 2DGS 坐标系）
+# translation: [x, y, z]  scale: 均匀缩放  rotation_euler: [rx, ry, rz] 弧度
+
+background:
+  scene: counter
+  path: outputs/background/point_cloud.ply
+
+objects:
+  object_a:
+    path: outputs/object_a/point_cloud.ply
+    format: 2dgs
+    translation: [0.5, 0.0, -1.2]
+    scale: 0.8
+    rotation_euler: [0.0, 0.3, 0.0]
+    description: "真实多视角重建保温杯，放置于 kitchen counter 台面"
+
+  object_b:
+    path: outputs/object_b/mesh.obj
+    format: mesh
+    translation: [-0.8, 0.1, -0.5]
+    scale: 0.5
+    rotation_euler: [0.0, 1.57, 0.0]
+    description: "threestudio 文本生成马克杯，置于台面"
+
+  object_c:
+    path: outputs/object_c/mesh.obj
+    format: mesh
+    translation: [0.0, 0.05, 0.3]
+    scale: 0.6
+    rotation_euler: [0.1, 0.0, 0.0]
+    description: "Magic123 单图生成塑料杯，置于台面"
+
+render:
+  output_dir: outputs/fused
+  num_frames: 120
+  radius: 3.0
+  height: 0.5
+  fov: 60
+  fps: 30
+  resolution: [1280, 720]
+  max_points: 400000
+  point_radius: 2
+  bg_color: [32, 32, 36]
